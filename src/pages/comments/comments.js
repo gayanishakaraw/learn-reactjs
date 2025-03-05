@@ -11,42 +11,40 @@ function Comments() {
   const hookResponse = useFetch(commentsUrl, null);
 
   // Fetch comments from the API
-  useEffect(() => {
-    const fetchComments = async () => {
-      setIsLoading(true);
-      const response = await fetch(commentsUrl);
-      const data = await response.json();
-      console.log(data);
-      setComments(data);
-      setIsLoading(false);
-    };
+  // useEffect(() => {
+  //   const fetchComments = async () => {
+  //     setIsLoading(true);
+  //     const response = await fetch(commentsUrl);
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setComments(data);
+  //     setIsLoading(false);
+  //   };
 
-    // fetchComments();
-  }, []);
+  //   // fetchComments();
+  // }, []);
 
   // Fetch comments from the API using the service
   useEffect(() => {
     const fetchCommentsFromService = async () => {
       setIsLoading(true);
-
       const data = await getComments();
       setComments(data);
       setIsLoading(false);
     };
-
-    // fetchCommentsFromService();
+    fetchCommentsFromService();
   }, []);
 
   // Fetch comments using the custom hook
-  useEffect(() => {
-    setIsLoading(true);
+  // useEffect(() => {
+  //   setIsLoading(true);
 
-    if (hookResponse) {
-      setComments(hookResponse.data);
-    }
+  //   if (hookResponse) {
+  //     setComments(hookResponse.data);
+  //   }
 
-    setIsLoading(hookResponse.isLoading);
-  }, [hookResponse]);
+  //   setIsLoading(hookResponse.isLoading);
+  // }, [hookResponse]);
 
   return (
     <div className="comments">

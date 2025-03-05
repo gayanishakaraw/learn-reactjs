@@ -3,3 +3,9 @@ export function getComments() {
     .then((response) => response.json())
     .then((json) => json);
 }
+
+export function getTodos() {
+  return fetch("https://jsonplaceholder.typicode.com/todos")
+    .then((response) => response.json())
+    .then((json) => json);
+}

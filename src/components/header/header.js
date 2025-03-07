@@ -1,5 +1,6 @@
 import "./header.css";
 import GenericImage from "../../controls/image";
+import {Link} from 'react-router';
 
 // Deconstructing the props
 function header({url = '', alt = ''}) {
@@ -11,9 +12,9 @@ function header({url = '', alt = ''}) {
 
       <div className="header-menu">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/comments">Comments</Link></li>
+          <li><Link to="/todos">Todos</Link></li>
         </ul>
       </div>
     </div>
